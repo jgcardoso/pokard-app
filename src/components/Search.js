@@ -1,16 +1,14 @@
 import React from "react";
-import SearchContext from "../state/SearchContext";
+// import SearchContext from "../state/SearchContext";
 
 function Card() {
-  const Search = React.useContext(SearchContext);
+  // const Search = React.useContext(SearchContext);
   const [inputSearch, setInputSearch] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    Search.getCards(inputSearch);
-
-    Search.setLoading(true);
+    console.log(inputSearch);
   }
 
   return (
