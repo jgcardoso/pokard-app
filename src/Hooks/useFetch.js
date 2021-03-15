@@ -31,7 +31,7 @@ const useFetch = () => {
       setDataLength(response.data.totalCount);
 
     } catch (error) {
-      setError(error.message)
+      setError('Error: ' + error.message)
     } finally {
       setLoading(false);
     }

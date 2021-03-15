@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import "./App.css";
 
 import Home from './views/Home'
+import About from './views/About'
 // import SearchContext from './state/SearchContext'
 import Search from './components/Search'
 
@@ -38,6 +39,7 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="about" element={<About />} />
             </Routes>
 
             <p>The literal and graphical information presented on this site about Pokemon, including card images and card text, Pokemon, The Pokemon TCG, and The Pokemon TCG Online and its trademarks are ©1995-2021 Nintendo, The Pokémon Company International, Inc, and GAMEFREAK. This website is not produced by, endorsed by, supported by, or affiliated with Nintendo, The Pokémon Company International, Inc, or GAMEFREAK.</p>

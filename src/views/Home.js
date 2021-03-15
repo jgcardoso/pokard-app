@@ -6,11 +6,11 @@ import useFetch from '../Hooks/useFetch'
 
 function Home() {
   const [page, setPage] = React.useState(1);
-  const { loading, request, data, dataLength } = useFetch();
+  const { loading, request, data, error,  dataLength } = useFetch();
 
   React.useEffect(() => {
     getData();
-  }, []);
+  }, []); // eslint-disable-line
 
   React.useEffect(() => {
     getData({
@@ -28,6 +28,8 @@ function Home() {
   
   return (
     <div className="home">
+
+      {error && <p>{error}</p>}
 
       <div className="cards-grid">
         {loading && !data && <p>Carregando...</p>}
