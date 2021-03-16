@@ -1,14 +1,16 @@
-import React from "react";
-// import SearchContext from "../state/SearchContext";
+import React, { useRef } from 'react'
+import { useNavigate } from 'react-router';
 
-function Card() {
-  // const Search = React.useContext(SearchContext);
+export default function FormSearch() {
   const [inputSearch, setInputSearch] = React.useState('');
+  const inputRef = useRef();
+  let navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
+    navigate(`search/${inputSearch}`);
 
-    console.log(inputSearch);
+    setInputSearch('');
   }
 
   return (
@@ -18,13 +20,12 @@ function Card() {
           type="text"
           value={inputSearch}
           placeholder="Pesquisar Carta"
+          ref={inputRef}
           required
           onChange={(event) => setInputSearch(event.target.value)}
         />
         <button type="submit">Pesquisar</button>
       </form>
     </div>
-  );
+  )
 }
-
-export default Card;

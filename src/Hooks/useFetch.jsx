@@ -7,7 +7,7 @@ const useFetch = () => {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(null);
 
-  const request = React.useCallback(async (url, options, reload) => {
+  const request = React.useCallback(async (url, options, reload = []) => {
     let response;
 
     try {
@@ -31,7 +31,8 @@ const useFetch = () => {
       setDataLength(response.data.totalCount);
 
     } catch (error) {
-      setError('Error: ' + error.message)
+      setError('Error: ' + error.message);
+      console.log(error);
     } finally {
       setLoading(false);
     }
